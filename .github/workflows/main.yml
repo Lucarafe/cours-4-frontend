@@ -38,9 +38,5 @@ jobs:
           env:
             VITE_APP_NAME: ${{ env.VITE_APP_NAME }}
 
-        - name: Deploy to GitHub Pages
-          uses: JamesIves/github-pages-deploy-action@4.1.1
-          with:
-            branch: gh-pages
-            folder: dist
-            clean: true
+        - name: Linter
+          run: npm run lint
