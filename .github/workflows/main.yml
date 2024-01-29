@@ -16,19 +16,14 @@ permissions:
   contents: write
   pages: write
   id-token: write
-# Créer un workflow github action qui :
-#
-#- Run le linter et formatteur (Commit les changement si besoin)
-#- Run les tests
-#- Build le dossier de prod (Dossier dist)
-#- Recupère le dossier dist et lance les test e2e
-#- Deploie les sources sur Github Action
+
 jobs:
-build:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-      - run: echo test
+  build:
+      runs-on: ubuntu-latest
+      steps:
+        - name: Checkout
+          uses: actions/checkout@v4
+        - name: Setup Node.js
+          uses: actions/setup-node@v4
+        - run: echo test
+        - run: npm ci
