@@ -26,4 +26,9 @@ jobs:
         - name: Setup Node.js
           uses: actions/setup-node@v4
         - run: echo test
+
+        - name: Install dependencies
         - run: npm ci
+
+        - name: Lint
+        - run: npm run lint
