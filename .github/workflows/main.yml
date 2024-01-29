@@ -32,3 +32,16 @@ jobs:
 
         - name: Lint
           run: npm run lint
+
+        - name: Formatter
+          run: npm run format
+
+        - name: Run Tests
+          run: npm run test
+
+        - name: Deploy to GitHub Pages
+          uses: JamesIves/github-pages-deploy-action@4.1.1
+          with:
+            branch: gh-pages
+            folder: dist
+            clean: true
